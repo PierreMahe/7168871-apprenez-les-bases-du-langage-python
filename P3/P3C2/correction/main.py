@@ -28,6 +28,8 @@ for product in products:
 # Extraction des descriptions des produits dans la liste
 descriptions_list = []
 for product in products:
+    # Permet de réinitialiser le name pour ne pas boucler sur le name de la boucle for précédente ce qui va permettre d'ajouter la description à chaque produit du dictionnaire.
+    name = product.find("h2").string 
     # La description eest le dernier élément de la liste des paragraphes
     description = product.find_all("p")[-1].string
     all_products[name]["description"] = description
